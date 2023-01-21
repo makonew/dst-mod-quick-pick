@@ -1,7 +1,8 @@
-name = "Quick Pick"
-description = "It makes almost everything pick quickly."
-author = "辣椒小皇纸"
-version = "1.4.0"
+local Lg = locale == "zh" or locale == "zhr"
+name = Lg and "快速采集" or "Quick Pick"
+description = Lg and "快速采集几乎所有东西" or "It makes almost everything pick quickly."
+author = "PiaoYang (Origin.辣椒小皇纸)"
+version = "1.5.0"
 forumthread = ""
 
 api_version = 10
@@ -19,46 +20,50 @@ server_filter_tags = {"Quick Pick"}
 -- General settings --
 ----------------------
 
-configuration_options =
-{
-    {
-        name = "quick_pick_cactus",
-        label = "Quick Pick Cactus or Lichen",
-        hover = "Quick picking cactus or lichen",
-        options =   {
-                        {description = "Yes", data = true, hover = ""},
-                        {description = "No", data = false, hover = ""},
-                    },
-        default = true,
-    },
-    {
-        name = "quick_pick_plant_normal_ground",
-        label = "Quick Pick Wormwood's plant",
-        hover = "Quick picking the plants that Wormwood planted on the groud",
-        options =   {
-                        {description = "Yes", data = true, hover = ""},
-                        {description = "No", data = false, hover = ""},
-                    },
-        default = true,
-    },
-    {
-        name = "quick_harvest",
-        label = "Quick Harvest",
-        hover = "Quick picking from cookpots, dryers and farms",
-        options =   {
-                        {description = "Yes", data = true, hover = ""},
-                        {description = "No", data = false, hover = ""},
-                    },
-        default = true,
-    },
-    {
-        name = "quick_cook_on_fire",
-        label = "Quick Cook on Fire",
-        hover = "Quick cooking foods on firepit.",
-        options =   {
-                        {description = "Yes", data = true, hover = ""},
-                        {description = "No", data = false, hover = ""},
-                    },
-        default = true,
-    },
-}
+local boolean_option = {{
+    description = "No",
+    data = false,
+    hover = ""
+}, {
+    description = "Yes",
+    data = true,
+    hover = ""
+}}
+
+configuration_options = {{
+    name = "quick_pick_cactus",
+    label = Lg and "快速采集仙人掌或苔藓" or "Quick Pick Cactus or Lichen",
+    hover = Lg and "快速采集仙人掌或苔藓" or "Quick picking cactus or lichen",
+    options = boolean_option,
+    default = true
+}, {
+    name = "quick_pick_plant_normal_ground",
+    label = Lg and "快速采集沃姆伍德的植物" or "Quick Pick Wormwood's plant",
+    hover = Lg and "快速采集沃姆伍德种在地上的植物" or"Quick picking the plants that Wormwood planted on the groud",
+    options = boolean_option,
+    default = true
+}, {
+    name = "quick_harvest",
+    label = Lg and "快速收获" or "Quick Harvest",
+    hover = Lg and "快速收获锅炉、晾肉架、农场" or "Quick picking from cookpots, dryers and farms",
+    options = boolean_option,
+    default = true
+}, {
+    name = "quick_cook_on_fire",
+    label = Lg and "快速在火上烹饪食物" or "Quick Cook on Fire",
+    hover = Lg and "快速在篝火上烹饪食物" or "Quick cooking foods on firepit.",
+    options = boolean_option,
+    default = true
+}, {
+    name = "quick_on_riding",
+    label = Lg and "骑行时快速采集" or "Quick pick when riding",
+    hover = Lg and "骑行皮弗娄牛时快速采集" or "Quick pick when riding on Beefalo.",
+    options = boolean_option,
+    default = true
+}, {
+    name = "quick_plant_interact",
+    label = Lg and "快速植物对话" or "Quick Talk whih Plants",
+    hover = Lg and "种田时快速与植物对话" or "Quick talk to plants when farming.",
+    options = boolean_option,
+    default = true
+}}
