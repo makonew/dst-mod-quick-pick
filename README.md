@@ -67,6 +67,8 @@ Source code is available at [Github](https://github.com/46319943/dst-mod-quick-p
 # 快速采集
 
 ## 描述
+原始版本在[这里](https://steamcommunity.com/sharedfiles/filedetails/?id=501385076)
+
 使浆果、草、树枝等都能快速采集
 
 ## 更新日志

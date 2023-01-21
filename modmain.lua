@@ -67,7 +67,7 @@ end
 -- Quick talk when farming
 if GetModConfigData("quick_plant_interact") then
     AddStategraphPostInit("wilson", function(sg)
-        local actionhandler_pick = GLOBAL.ActionHandler(GLOBAL.ACTIONS.INTERACT_WITH, "dolongaction")
+        local actionhandler_pick = GLOBAL.ActionHandler(GLOBAL.ACTIONS.INTERACT_WITH, "doshortaction")
         sg.actionhandlers[GLOBAL.ACTIONS.INTERACT_WITH] = actionhandler_pick
     end)
 end
