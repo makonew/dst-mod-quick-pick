@@ -43,6 +43,16 @@ if GetModConfigData("quick_cook_on_fire") then
         sg.actionhandlers[GLOBAL.ACTIONS.COOK] = actionhandler
     end)
 end
+--Moon quay stuff
+if GetModConfigData("quick_pick_moon_quay") then
+    local quick_pick_list2 = {
+        "monkeytail",
+        "bananabush",
+    }
+    for k,v in pairs(quick_pick_list2) do
+        table.insert(quick_pick_list, v)
+    end
+end
 
 -- Quick pick when riding on Beefalo
 if GetModConfigData("quick_on_riding") then
