@@ -1,8 +1,8 @@
 local Lg = locale == "zh" or locale == "zhr"
-name = Lg and "快速采集" or "Quick Pick"
+name = Lg and "快速采集" or "Quick Pick Improved"
 description = Lg and "快速采集几乎所有东西" or "It makes almost everything pick quickly."
 author = "Makonew (Origin.PiaoYang (Origin.辣椒小皇纸))"
-version = "1.6.0"
+version = "1.10.0"
 forumthread = ""
 
 api_version = 10
@@ -65,15 +65,31 @@ configuration_options = {{
     label = Lg and "快速植物对话" or "Quick Talk whih Plants",
     hover = Lg and "种田时快速与植物对话" or "Quick talk to plants when farming.",
     options = boolean_option,
-    default = true
+    default = false
 },  {
     name = "quick_pick_moon_quay",
     label = "Quick Pick on Banana Bushes and Monkeytails",
     hover = "Quick Pick on Banana Bushes and Monkeytails.",
-    options =   {
-                    {description = "Yes", data = true, hover = ""},
-                    {description = "No", data = false, hover = ""},
-                },
-    default = true,
-}
+    options = boolean_option,
+    default = true
+},  {
+    name = "quick_pick_tallbird",
+    label = "Quick Pick on Tallbird nests.",
+    hover = "Quick Pick on Tallbird nests.",
+    options = boolean_option,
+    default = true
+},  {
+    name = "quick_pick_oceanvine",
+    label = "Quick Pick on Mossy Vine.",
+    hover = "Quick Pick on Mossy Vine.",
+    options = boolean_option,
+    default = true
+},  {
+    name = "quick_takeitem",
+    label = "Quick Pick on Meat Bulb.",
+    hover = "Quick Pick on Meat Bulb.",
+    options = boolean_option,
+    default = true
+                                },
+
 }
