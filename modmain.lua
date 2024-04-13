@@ -10,6 +10,24 @@ if GetModConfigData("quick_pick_cactus") then
     end
 end
 
+--Moon quay stuff
+if GetModConfigData("quick_pick_moon_quay") then
+    local quick_pick_list2 = {
+        "monkeytail",
+        "bananabush"
+    }
+    for k,v in pairs(quick_pick_list2) do
+        table.insert(quick_pick_list, v)
+    end
+end
+--Tall bird nests
+if GetModConfigData("quick_pick_tallbird") then
+    local quick_pick_list2 = {
+        "tallbirdnest"    }
+    for k,v in pairs(quick_pick_list2) do
+        table.insert(quick_pick_list, v)
+    end
+end
 -- Quick Pick Wormwood's plant
 if GetModConfigData("quick_pick_plant_normal_ground") then
     table.insert(quick_pick_list, "plant_normal_ground")
@@ -19,12 +37,28 @@ end
 if GLOBAL.KnownModIndex:IsModEnabled("workshop-1463489316") then
     table.insert(quick_pick_list, "coffeebush")
 end
+--Mossy Vine 
+if GetModConfigData("quick_pick_oceanvine") then
+    local quick_pick_list2 = {
+        "oceanvine"    }
+    for k,v in pairs(quick_pick_list2) do
+        table.insert(quick_pick_list, v)
+    end
+end
 
 for k, v in pairs(quick_pick_list) do
     AddPrefabPostInit(v, function(inst)
         if inst.components.pickable then
             inst.components.pickable.quickpick = true
         end
+    end)
+end
+
+-- Quick take items
+if GetModConfigData("quick_takeitem") then
+    AddStategraphPostInit("wilson", function(sg)
+        local actionhandler = GLOBAL.ActionHandler(GLOBAL.ACTIONS.TAKEITEM, "doshortaction")
+        sg.actionhandlers[GLOBAL.ACTIONS.TAKEITEM] = actionhandler
     end)
 end
 
@@ -42,16 +76,6 @@ if GetModConfigData("quick_cook_on_fire") then
         local actionhandler = GLOBAL.ActionHandler(GLOBAL.ACTIONS.COOK, "doshortaction")
         sg.actionhandlers[GLOBAL.ACTIONS.COOK] = actionhandler
     end)
-end
---Moon quay stuff
-if GetModConfigData("quick_pick_moon_quay") then
-    local quick_pick_list2 = {
-        "monkeytail",
-        "bananabush",
-    }
-    for k,v in pairs(quick_pick_list2) do
-        table.insert(quick_pick_list, v)
-    end
 end
 
 -- Quick pick when riding on Beefalo
