@@ -20,14 +20,6 @@ if GLOBAL.KnownModIndex:IsModEnabled("workshop-1463489316") then
     table.insert(quick_pick_list, "coffeebush")
 end
 
-for k, v in pairs(quick_pick_list) do
-    AddPrefabPostInit(v, function(inst)
-        if inst.components.pickable then
-            inst.components.pickable.quickpick = true
-        end
-    end)
-end
-
 -- Quick pick from cookpots, dryers and farms
 if GetModConfigData("quick_harvest") then
     AddStategraphPostInit("wilson", function(sg)
@@ -73,6 +65,16 @@ if GetModConfigData("quick_on_riding") then
         sg.actionhandlers[GLOBAL.ACTIONS.PICKUP] = actionhandler_pickup
     end)
 end
+
+
+for k, v in pairs(quick_pick_list) do
+    AddPrefabPostInit(v, function(inst)
+        if inst.components.pickable then
+            inst.components.pickable.quickpick = true
+        end
+    end)
+end
+
 
 -- Quick talk when farming
 if GetModConfigData("quick_plant_interact") then
