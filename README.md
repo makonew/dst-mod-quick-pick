@@ -11,11 +11,16 @@ The mod removes the animation of harvest grass, sapling, berrybush and other thi
 
 It makes almost everything pick quickly.
 
-## Changelog
+**Version 1.8.1**
+- Fixed quick picking of monkey tails and banana bushes.
 
+**Version 1.8.0**
+- Added meat plants, figs and mossy vines
+
+**Version 1.7.0**
+- Bugfix
 **Version 1.6.0**
-
-- Add quick pick for Banana bushes and monkeytails
+- Added monkeytails and bananabushes
 
 **Version 1.5.0**
 

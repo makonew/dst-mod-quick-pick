@@ -2,7 +2,7 @@ local Lg = locale == "zh" or locale == "zhr"
 name = Lg and "快速采集" or "Quick Pick Improved"
 description = Lg and "快速采集几乎所有东西" or "It makes almost everything pick quickly."
 author = "Makonew (Origin.PiaoYang (Origin.辣椒小皇纸))"
-version = "1.10.0"
+version = "1.8.1"
 forumthread = ""
 
 api_version = 10
