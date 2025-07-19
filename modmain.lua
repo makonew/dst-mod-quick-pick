@@ -46,11 +46,16 @@ if GetModConfigData("quick_pick_moon_quay") then
     end
 end
 
+
+
 -- Quick pick when riding on Beefalo
 if GetModConfigData("quick_on_riding") then
     AddStategraphPostInit("wilson", function(sg)
         local actionhandler_pick = GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICK, function(inst, action)
-            return (action.target ~= nil and action.target.components.pickable ~= nil and
+            if action.target ~= nil and action.target.prefab == "otterden" then
+                return "doshortaction"
+            end
+            return (action.target ~= nil and action.target.prefab ~= "otterden" and action.target.components.pickable ~= nil and
                        ((action.target.components.pickable.jostlepick and "dojostleaction") or
                            (action.target.components.pickable.quickpick and "doshortaction") or
                            (inst:HasTag("fastpicker") and "doshortaction") or
@@ -59,7 +64,7 @@ if GetModConfigData("quick_on_riding") then
         sg.actionhandlers[GLOBAL.ACTIONS.PICK] = actionhandler_pick
 
         local actionhandler_pickup = GLOBAL.ActionHandler(GLOBAL.ACTIONS.PICKUP, function(inst, action)
-            return (action.target ~= nil and action.target:HasTag("minigameitem") and "dosilentshortaction") or
+            return (action.target ~= nil and  action.target.prefab ~= "otterden" and action.target:HasTag("minigameitem") and "dosilentshortaction") or
                        "doshortaction"
         end)
         sg.actionhandlers[GLOBAL.ACTIONS.PICKUP] = actionhandler_pickup

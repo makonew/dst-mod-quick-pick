@@ -2,7 +2,7 @@ local Lg = locale == "zh" or locale == "zhr"
 name = Lg and "快速采集" or "Quick Pick Improved"
 description = Lg and "快速采集几乎所有东西" or "It makes almost everything pick quickly."
 author = "Makonew (Origin.PiaoYang (Origin.辣椒小皇纸))"
-version = "1.8.1"
+version = "1.9.0"
 forumthread = ""
 
 api_version = 10
@@ -88,6 +88,13 @@ configuration_options = {{
     name = "quick_takeitem",
     label = "Quick Pick on Meat Bulb.",
     hover = "Quick Pick on Meat Bulb.",
+    options = boolean_option,
+    default = true
+                                },
+                                {
+    name = "quick_pick_otterden",
+    label = "Quick Pick on Otter den.",
+    hover = "Quick Pick on Otter den.",
     options = boolean_option,
     default = true
                                 },

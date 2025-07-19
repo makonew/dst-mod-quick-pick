@@ -11,6 +11,9 @@ The mod removes the animation of harvest grass, sapling, berrybush and other thi
 
 It makes almost everything pick quickly.
 
+**Version 1.9.0**
+- Fixed quick picking of otterdens.
+
 **Version 1.8.1**
 - Fixed quick picking of monkey tails and banana bushes.
 
